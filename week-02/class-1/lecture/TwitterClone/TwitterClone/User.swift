@@ -14,6 +14,8 @@ class User
     let profileImageUrl: String
     let location: String
     
+    // maybe add other information?
+    
     init(name: String, profileImageUrl: String, location: String)
     {
         self.name = name

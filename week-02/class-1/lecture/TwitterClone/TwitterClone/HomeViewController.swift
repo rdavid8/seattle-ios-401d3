@@ -8,18 +8,18 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource
+class HomeViewController: UIViewController, UITableViewDataSource //creating New class named HomeViewController. it is inheriting from UIViewController and conforming to UITableVIewDataSources protocol
 {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! //connecting the view with the code subclass of UIView
     
-    var datasource = [Tweet]() {
+    var datasource = [Tweet]() { // array of Tweet classes based on JSON files.
         didSet {
-            //
+            self.tableView.reloadData() // this function reloads tableview each time something is changed on the array.
         }
     }
     
-    override func viewDidLoad()
+    override func viewDidLoad() // original code. override will help intit
     {
         super.viewDidLoad()
         self.setupTableView()
@@ -27,53 +27,57 @@ class HomeViewController: UIViewController, UITableViewDataSource
     
     override func viewWillAppear(animated: Bool)
     {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(animated) // informing the view to animate
         self.update()
         
     }
-
+    
     override func didReceiveMemoryWarning()
     {
-        super.didReceiveMemoryWarning()
+        super.didReceiveMemoryWarning() //original code
     }
     
     func setupTableView()
     {
-        self.tableView.dataSource = self
+        self.tableView.dataSource = self //setting the data source of the visual aid to the class HomeViewController. this allows view to update with any variables listed in this class
     }
     
     func update()
     {
-        JSONParser.tweetJSONFrom(JSONParser.JSONData()) { (success, tweets) -> () in
-            if success {
-                if let tweets = tweets {
+        API.shared.GETTweets { (tweets) -> () in // will get tweets
+            if let tweets = tweets {
                     self.datasource = tweets
+            }
+            API.shared.GETOAuthUser{ (user) -> () in
+                if let user = user {
+                    print(user.name)
+                    print(user.profileImageUrl)
+                    print(user.location)
                 }
             }
         }
     }
 }
-
-extension HomeViewController
-{
-    func configureCellForIndexPath(indexPath: NSIndexPath) -> UITableViewCell
+    extension HomeViewController
     {
-        let tweetCell = self.tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
-        let tweet = self.datasource[indexPath.row]
-        tweetCell.textLabel?.text = tweet.text
+        func configureCellForIndexPath(indexPath: NSIndexPath) -> UITableViewCell // Function for conveyorbelting the table
+        {
+            let tweetCell = self.tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) //grabs the tweetcell that has been dequeued by user(dequque means no longer visible)
+            let tweet = self.datasource[indexPath.row] //grabs the specific tweet from array datasource
+            tweetCell.textLabel?.text = tweet.text // sets the dequeue cells text equal to the tweets text.
+            
+            // Return cell.
+            return tweetCell // returns the dequeued cell
+        }
         
-        // Return cell.
-        return tweetCell
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return self.datasource.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        return self.configureCellForIndexPath(indexPath)
-    }
+        func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int // NECESSARY TO CONFROM TO UITableViewDataSource
+        {
+            return self.datasource.count //returns maxiumum of rows at any given time
+        }
+        
+        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell //NECESSARY TO CONFORM to UITableViewDataSource
+        {
+            return self.configureCellForIndexPath(indexPath) //returns the reused cell from configureCellForIndexPath and adds it to table.
+        }
 }
 

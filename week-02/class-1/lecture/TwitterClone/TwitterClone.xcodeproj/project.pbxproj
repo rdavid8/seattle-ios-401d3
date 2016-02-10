@@ -16,6 +16,7 @@
 		1C6285D41C6913F100CF2AC0 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285D31C6913F100CF2AC0 /* JSONParser.swift */; };
 		1C6285D71C69163700CF2AC0 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285D61C69163700CF2AC0 /* Tweet.swift */; };
 		1C6285DA1C69167200CF2AC0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6285D91C69167200CF2AC0 /* User.swift */; };
+		3AC0FE641C6A60DD00EC627C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC0FE631C6A60DD00EC627C /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1C6285D31C6913F100CF2AC0 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		1C6285D61C69163700CF2AC0 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		1C6285D91C69167200CF2AC0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3AC0FE631C6A60DD00EC627C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1C6285D31C6913F100CF2AC0 /* JSONParser.swift */,
+				3AC0FE631C6A60DD00EC627C /* API.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				1C6285BC1C690F3B00CF2AC0 /* AppDelegate.swift in Sources */,
 				1C6285D41C6913F100CF2AC0 /* JSONParser.swift in Sources */,
 				1C6285DA1C69167200CF2AC0 /* User.swift in Sources */,
+				3AC0FE641C6A60DD00EC627C /* API.swift in Sources */,
 				1C6285D71C69163700CF2AC0 /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +356,7 @@
 				1C6285CC1C690F3B00CF2AC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

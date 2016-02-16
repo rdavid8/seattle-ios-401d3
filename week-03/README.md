@@ -10,6 +10,10 @@ of the images with the filters applied.
 		* Layout: centerX, centerY + 10, width 0.94, height 0.82
 	* Use the UIImagePickerController and its delegate to use the camera to set the image view’s image. 
 	* Add a toolbar with "+" button to your navigation controller that brings up ActionController if the device supports Camera and Photo Library, if not, simply present Photo library.
+<<<<<<< HEAD
+=======
+	* Start planning out your process, and developing a gameplan, for building your Personal Projects for Week 5 project week.
+>>>>>>> 44381af72f4262e11d39abd6d968821adf8d64ad
 	* **Code Challenge:** 
 		* Write a function that determines how many words there are in a sentence
 	* **Bonus:** 

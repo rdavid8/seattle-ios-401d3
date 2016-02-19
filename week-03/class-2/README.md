@@ -17,7 +17,11 @@
 * In your coding challenge playground, take a guess at who in class is a Snapchat POWER USER!(1 bonus point).
 
 ###Reading Assignment:
+<<<<<<< HEAD
 * [Core Image Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html)
+=======
+* [Core Image Programming Guide](https://developer.apple.com/library/ios/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_intro/ci_intro.html)
+>>>>>>> 5a3cca3378da9b18f65f5c2ac49c09f2aa16ccca
 * Animating Constraints - Refresh on General Concepts
 * [CloudKit](https://developer.apple.com/library/ios/documentation/General/Conceptual/iCloudDesignGuide/DesigningforCloudKit/DesigningforCloudKit.html) - Refresh
 * [UITabBarController](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITabBarController_Class/index.html)
